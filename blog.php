@@ -31,11 +31,10 @@
     </div>
 
     <script>
-        // Fetch data from PHP endpoint and fill blog content
         fetch('/api/v1/articles/get.php')
             .then(response => response.json())
             .then(data => {
-                console.log(data); // Check if data is correctly fetched
+                console.log(data);
                 const blogTitle = document.getElementById('blogTitle');
                 const blogDate = document.getElementById('blogDate');
                 const blogContent = document.getElementById('blogContent');
@@ -47,7 +46,6 @@
                 } else {
                     const articleId = new URLSearchParams(window.location.search).get('id');
                     const article = data.find(item => item.id === articleId);
-                    console.log(article); // Check if correct article is found
                     if (article) {
                         blogTitle.textContent = article.name;
                         blogDate.textContent = article.date;

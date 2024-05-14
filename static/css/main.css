@@ -19,8 +19,8 @@ body {
     color: white;
     padding: 10px 20px;
     display: block;
-    text-align:center;
-    min-width:80%;
+    text-align: center;
+    min-width: 80%;
     text-decoration: none;
     transition-duration: 2s;
 }
@@ -52,7 +52,25 @@ body {
     margin: 0;
     padding: 0;
 }
-.news a{
+.news a {
     text-align: center;
     color: goldenrod;
+}
+.mods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.mod {
+    border: 2px solid white;
+    background-color: #ffffff42;
+    max-width: 250px;
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+}
+.mod a {
+    text-decoration: none;
+    color: white;
 }
