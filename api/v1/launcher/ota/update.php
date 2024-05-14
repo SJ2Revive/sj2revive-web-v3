@@ -1,0 +1,5 @@
+<?
+/*
+zarezerwowanie dla updatowania Launchera
+*/
+?>

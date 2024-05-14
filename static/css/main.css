@@ -52,3 +52,7 @@ body {
     margin: 0;
     padding: 0;
 }
+.news a{
+    text-align: center;
+    color: goldenrod;
+}
