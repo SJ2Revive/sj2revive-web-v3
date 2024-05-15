@@ -31,6 +31,9 @@ if(!checkifwhitelisted())
         <a href="/launcher.php">Launcher</a>
         <a href="/oa.php">Aktualizacje</a>
         <a href="/ustawienia.php">Ustawienia</a>
+        <?php
+        render();
+        ?>
     </div>
     <div class="main-content">
         <br/>

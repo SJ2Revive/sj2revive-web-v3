@@ -74,3 +74,14 @@ body {
     text-decoration: none;
     color: white;
 }
+a {
+    color:red;
+    text-decoration: none;
+}
+button {
+    min-width: 100px;
+    min-height: 50px;
+    background-color: rgba(173, 173, 173, 0.295);
+    color: white;
+    border: 2px solid white;
+}

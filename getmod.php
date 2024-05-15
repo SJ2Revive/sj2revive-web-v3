@@ -23,6 +23,10 @@
         <a href="/launcher.php">Launcher</a>
         <a href="/oa.php">Aktualizacje</a>
         <a href="/ustawienia.php">Ustawienia</a>
+        <?php
+        include("src/whitelist.php");
+        render();
+        ?>
     </div>
     <div class="main-content">
         <h3 id="ModTitle">test</h3>

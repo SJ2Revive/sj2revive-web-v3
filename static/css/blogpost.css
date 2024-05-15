@@ -85,3 +85,7 @@ input {
     background-color: #3d3d3d;
     color: white;
 }
+a {
+    color:red;
+    text-decoration: none;
+}

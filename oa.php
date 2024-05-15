@@ -30,31 +30,20 @@
     </div>
     <div class="main-content">
         <h1></h1>
-        <h3>Blog</h3>
-        <h5>Tutaj znajdziesz mody na temat SJ2Revive</h5>
-        <div class="mods">
-        </div>
+        <h3>Oficjalne aktualizacje SJ2 (1.01-1.03)</h3>
+        <h5>Wybierz kategorie która cię interesuje</h5>
+        <h4> Reupload oficjalnych aktualizacji do SJ2 ponieważ pobranie ich już nie jest możliwe </h4>
+        <h4> Opis: </h4>
+        <p>
+        Archiwum HASŁO: 'chomik almerczak'<br />
+        Po kolei podmieniaj pliki z originalnym folderem gry (każda aktualizacja osobno po kolei)<br />
+        <a href='https://chomikuj.pl/c7179019/Aktualizacje+Symulator+Jazdy+2,2304492196.rar(archive)'>Źródło</a></br />
+        <a href='https://www.youtube.com/watch?v=t_CQVoO1BGE'>PORADNIK WIDEO INSTALACJI AKTUALIZACJI</a><br />
+        <br />
+        <br />
+        <a style="text-align:center;" href='mods/patch - SJ2Revive.zip'>
+            <button style="text-align:center;">Pobierz</button>
+        </a>
     </div>
-
-    <script>
-        fetch('/api/v1/mods/get.php')
-            .then(response => response.json())
-            .then(data => {
-                const modsDiv = document.querySelector('.mods');
-                if (data.error) {
-                    modsDiv.innerHTML = '<p>Nie udało się uzyskać modów</p>';
-                } else {
-                    let modsHTML = '';
-                    data.forEach(mod => {
-                        modsHTML += `<div class='mod'><img src="static/img/mods/${mod.id}.png" height="256" width="256"/><br/><a href='/getmod.php?id=${mod.id}'>${mod.name} - ${mod.shortdesc}</a><br></div>`;
-                    });
-                    modsDiv.innerHTML = modsHTML;
-                }
-            })
-            .catch(error => {
-                const modsDiv = document.querySelector('.mods');
-                modsDiv.innerHTML = '<p>Nie udało się uzyskać modów</p>';
-            });
-    </script>
 </body>
 </html>
