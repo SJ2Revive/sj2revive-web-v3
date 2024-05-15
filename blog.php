@@ -53,7 +53,7 @@
                     if (article) {
                         blogTitle.textContent = article.name;
                         blogDate.innerHTML = article.date;
-                        blogContent.textContent = article.content;
+                        blogContent.innerHTML = article.content;
                     } else {
                         blogTitle.textContent = 'Błąd pobierania bloga';
                         blogDate.textContent = '';
