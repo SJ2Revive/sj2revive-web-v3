@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SJ2Revive</title>
     <style>
-        @import url("static/css/main.css");
+        @import url("../static/css/blogpost.css");
     </style>
 </head>
 <body>
@@ -23,16 +23,21 @@
         <a href="/launcher.php">Launcher</a>
         <a href="/oa.php">Aktualizacje</a>
         <a href="/ustawienia.php">Ustawienia</a>
-        <?php
-        include("src/whitelist.php");
-        render();
-        ?>
     </div>
     <div class="main-content">
-        <h1></h1>
-        <h3>Witamy na odnowionej stronie projektu SJ2REVIVE</h3>
-        <h5>Wybierz kategorie która cię interesuje</h5>
-        <img src="https://media.tenor.com/ZZIk4A2HY4sAAAAi/cockroach-spinning.gif" width="256" height="256"/>
+        <br/>
+        <br/>
+    <form action="api/v1/articles/add.php" method="get">
+        <p>Nazwa posta</p>
+        <input name="name"/>
+        <br/>
+        <br/>
+        <p>Zawartość posta</p>
+        <textarea name="content" width="500" height="500"></textarea>
+        <br/>
+        <br/>
+        <input type="submit"/>
+    </form>
     </div>
 </body>
 </html>
