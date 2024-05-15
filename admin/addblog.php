@@ -1,3 +1,11 @@
+<?php
+require("../src/whitelist.php");
+if(!checkifwhitelisted())
+{
+    header("location: /");
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>

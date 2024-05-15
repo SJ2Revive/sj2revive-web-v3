@@ -15,4 +15,13 @@ function render()
         
     }
 }
-?>
+function checkifwhitelisted()
+{
+    if(in_array($_SERVER['REMOTE_ADDR'],getlist()))
+    {
+        return true;
+    } else {
+        return false;
+    }
+}
+

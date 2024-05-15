@@ -1,6 +1,11 @@
 <?php
 require("../../../config.php");
-
+require("../../../src/whitelist.php");
+if(!checkifwhitelisted())
+{
+    header("location: /");
+    die();
+}
 // Get parameters from GET request
 $name = isset($_GET['name']) ? $_GET['name'] : '';
 $content = isset($_GET['content']) ? $_GET['content'] : '';
