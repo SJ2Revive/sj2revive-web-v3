@@ -52,7 +52,7 @@
                     const article = data.find(item => item.id === articleId);
                     if (article) {
                         blogTitle.textContent = article.name;
-                        blogDate.textContent = article.date;
+                        blogDate.innerHTML = article.date;
                         blogContent.textContent = article.content;
                     } else {
                         blogTitle.textContent = 'Błąd pobierania bloga';

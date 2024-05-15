@@ -38,7 +38,7 @@ if(!checkifwhitelisted())
     <div class="main-content">
         <br/>
         <br/>
-    <form action="api/v1/articles/add.php" method="get">
+    <form action="../api/v1/articles/add.php" method="get">
         <p>Nazwa posta</p>
         <input name="name"/>
         <br/>
