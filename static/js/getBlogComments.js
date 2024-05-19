@@ -5,7 +5,7 @@ fetch(`/api/v1/articles/getcomments.php?i=${articleId}`)
                 const modsDiv = document.querySelector('.comments');
                 if (data.error) {
                     modsDiv.innerHTML = '<p>Nie udało się uzyskać komentarzy</p>';
-                } else {
+                } 
                     let modsHTML = '';
                     data.forEach(mod => {
                         modsHTML += `<div class='comments'><p>Sender: ${mod.sender}</p><p>${mod.content}</p><p>${mod.date}</div>`;
@@ -25,7 +25,7 @@ fetch(`/api/v1/articles/getcomments.php?i=${articleId}`)
                     <br/>
                     <br/>
                     </form>`;
-                }
+                
             })
             .catch(error => {
             });
