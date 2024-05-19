@@ -37,19 +37,21 @@
         <div class="shoutboxcontainer">
             <p align="center">Shoutbox</p>
             <div class="shoutbox">
-                <p>test: hi!</p>
-                <p>test: hi!</p>
-                <p>test: hi!</p>
-                <p>test: hi!</p>
-                <p>test: hi!</p>
-                <p>test: hi!</p>
-                <p>test: hi!</p>
-                <p>test: hi!</p>
             </div>
             <br/>
-            <input name="message"/>
-            <input type="submit"/>
+            <form action="api/v1/shoutbox/add.php" method="get">
+                <input name="author" placeholder="Nazwa użytkownika"/>
+                <input name="content" placeholder="Wiadomość"/>
+                <input type="submit"/>
+                <?php
+                if(checkifwhitelisted())
+                {
+                    echo "<a href='api/v1/shoutbox/clear.php'><button style='width:100%'>Wyczyść czat</button></a>";
+                }
+                ?>
+            </form>
         </div>
+        <script src="static/js/getShoutbox.js"></script>
     </div>
 </body>
 </html>

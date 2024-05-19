@@ -28,8 +28,6 @@ fetch(`/api/v1/articles/getcomments.php?i=${articleId}`)
                 }
             })
             .catch(error => {
-                const modsDiv = document.querySelector('.mods');
-                modsDiv.innerHTML = '<p>Nie udało się uzyskać modów</p>';
             });
 
             

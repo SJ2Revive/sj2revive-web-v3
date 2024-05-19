@@ -4,11 +4,6 @@ CREATE TABLE `sj2revive`.`art_comments` (`id` INT NOT NULL , `sender` TEXT NOT N
 */
 require("../../../config.php");
 require("../../../src/whitelist.php");
-if(!checkifwhitelisted())
-{
-    header("location: /");
-    die();
-}
 $db = new mysqli($dbhost, $dbuser, $dbpassword, $dbname, $dbport);
 $id = $_GET['id'];
 $sender = $_GET['sender'];
