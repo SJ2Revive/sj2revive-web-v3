@@ -2,16 +2,16 @@ const articleId = new URLSearchParams(window.location.search).get('id');
 fetch(`/api/v1/articles/getcomments.php?i=${articleId}`)
             .then(response => response.json())
             .then(data => {
-                const modsDiv = document.querySelector('.comments');
-                if (data.error) {
-                    modsDiv.innerHTML = '<p>Nie udało się uzyskać komentarzy</p>';
-                } 
-                    let modsHTML = '';
-                    data.forEach(mod => {
-                        modsHTML += `<div class='comments'><p>Sender: ${mod.sender}</p><p>${mod.content}</p><p>${mod.date}</div>`;
-                    });
+                const modsDiv = document.querySelector('.comments');   
+                let modsHTML = '';
+                    if(!data.error)
+                    {
+                        data.forEach(mod => {
+                            modsHTML += `<div class='comments'><p>Sender: ${mod.sender}</p><p>${mod.content}</p><p>${mod.date}</div>`;
+                        });
+                    }
                     modsDiv.innerHTML = modsHTML;
-                    modsDiv.innerHTML += `<div class="addcomment"></div>`
+                    modsDiv.innerHTML += `<div class="addcomment"></div>`;
                     const commentdiv = document.getElementsByClassName("addcomment")[0];
                     commentdiv.innerHTML = `
                     <form action='api/v1/articles/addcomment.php?id=${articleId}'>

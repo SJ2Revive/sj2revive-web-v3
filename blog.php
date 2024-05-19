@@ -40,6 +40,5 @@
 
     <script src="static/js/getBlog.js"></script>
     <script src="static/js/getBlogComments.js"></script>
-    <script src="static/js/addcommentform.js"></script>
 </body>
 </html>
