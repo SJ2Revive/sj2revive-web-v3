@@ -6,6 +6,7 @@
     <title>SJ2Revive</title>
     <style>
         @import url("static/css/main.css");
+        @import url("static/css/shoutbox.css");
     </style>
 </head>
 <body>
@@ -33,6 +34,22 @@
         <h3>Witamy na odnowionej stronie projektu SJ2REVIVE</h3>
         <h5>Wybierz kategorie która cię interesuje</h5>
         <img src="https://media.tenor.com/ZZIk4A2HY4sAAAAi/cockroach-spinning.gif" width="256" height="256"/>
+        <div class="shoutboxcontainer">
+            <p align="center">Shoutbox</p>
+            <div class="shoutbox">
+                <p>test: hi!</p>
+                <p>test: hi!</p>
+                <p>test: hi!</p>
+                <p>test: hi!</p>
+                <p>test: hi!</p>
+                <p>test: hi!</p>
+                <p>test: hi!</p>
+                <p>test: hi!</p>
+            </div>
+            <br/>
+            <input name="message"/>
+            <input type="submit"/>
+        </div>
     </div>
 </body>
 </html>

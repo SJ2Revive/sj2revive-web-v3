@@ -1,0 +1,42 @@
+.shoutboxcontainer {
+    border: 1px solid white;
+    width: 512px;
+    text-align: left; 
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.shoutboxcontainer p {
+     margin: 0;
+}
+.shoutbox {
+    color: green;
+    border: 1px solid white;
+    padding: 10px;
+    max-height: 200px; 
+    overflow-y: auto; 
+}
+
+.shoutbox p {
+    margin: 0; 
+}
+
+input {
+    color: gray;
+    border: 1px solid white;
+    width: 100%; 
+    padding: 5px; 
+    box-sizing: border-box; 
+    margin-bottom: 10px; 
+    background-color: #0c0c0c;
+    color: white;
+}
+
+hr {
+    min-width: 100%;
+}
+
+.shoutbox::-webkit-scrollbar {
+    background-color: gray;
+    max-width: 10px;
+}
