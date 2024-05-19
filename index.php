@@ -43,13 +43,14 @@
                 <input name="author" placeholder="Nazwa użytkownika"/>
                 <input name="content" placeholder="Wiadomość"/>
                 <input type="submit"/>
-                <?php
+                
+            </form>
+            <?php
                 if(checkifwhitelisted())
                 {
                     echo "<a href='api/v1/shoutbox/clear.php'><button style='width:100%'>Wyczyść czat</button></a>";
                 }
                 ?>
-            </form>
         </div>
         <script src="static/js/getShoutbox.js"></script>
     </div>
