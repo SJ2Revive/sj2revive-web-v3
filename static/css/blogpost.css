@@ -34,6 +34,7 @@ body {
     align-items: center;
     border: 2px solid white;
     text-align: center;
+
 }
 .sidebar img {
     text-align: center;
@@ -76,8 +77,8 @@ body {
 }
 
 textarea {
-    min-width: 512px;
-    min-height: 256px;
+    min-width: 256px;
+    min-height: 128px;
     background-color: #3d3d3d;
     color: white;
 }
@@ -85,7 +86,58 @@ input {
     background-color: #3d3d3d;
     color: white;
 }
+.addbtn {
+    min-width: 100px;
+    min-height: 50px;
+    background-color: rgba(173, 173, 173, 0.295);
+    border: 2px solid white;
+}
 a {
     color:red;
     text-decoration: none;
 }
+.comments {
+    border: 2px solid white;
+    max-width: 50vh;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #2c2c2c;
+    color: white;
+    text-align: center;
+}
+
+.comments form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comments p {
+    margin: 10px 0;
+}
+
+.comments input[name='sender'],
+.comments textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #3d3d3d;
+    color: white;
+    border: none;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.comments textarea {
+    min-height: 150px;
+}
+
+.comments .addbtn {
+    min-width: 100px;
+    min-height: 40px;
+    background-color: rgba(173, 173, 173, 0.295);
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+}
+

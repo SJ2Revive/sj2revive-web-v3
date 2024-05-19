@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SJ2Revive</title>
     <style>
-        @import url("static/css/main.css");
+        @import url("static/css/blogpost.css");
     </style>
 </head>
-<body>
     <div class="sidebar">
         <h2 class="logo">
             <span style="color: #086ed3;">SJ2</span>
@@ -32,44 +31,15 @@
         <h3 id="blogTitle"></h3>
         <h5 id="blogDate"></h5>
         <p id="blogContent"></p>
+        <div class="comments">
+        
+        <br/>
+        
     </div>
 
-    <script>
-        fetch('/api/v1/articles/get.php')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                const blogTitle = document.getElementById('blogTitle');
-                const blogDate = document.getElementById('blogDate');
-                const blogContent = document.getElementById('blogContent');
 
-                if (data.error) {
-                    blogTitle.textContent = 'Błąd pobierania bloga';
-                    blogDate.textContent = '';
-                    blogContent.textContent = 'Wystąpił błąd podczas pobierania zawartości bloga.';
-                } else {
-                    const articleId = new URLSearchParams(window.location.search).get('id');
-                    const article = data.find(item => item.id === articleId);
-                    if (article) {
-                        blogTitle.textContent = article.name;
-                        blogDate.innerHTML = article.date;
-                        blogContent.innerHTML = article.content;
-                    } else {
-                        blogTitle.textContent = 'Błąd pobierania bloga';
-                        blogDate.textContent = '';
-                        blogContent.textContent = 'Wystąpił błąd podczas pobierania zawartości bloga.';
-                    }
-                }
-            })
-            .catch(error => {
-                console.error('Błąd podczas pobierania zawartości bloga:', error);
-                const blogTitle = document.getElementById('blogTitle');
-                const blogDate = document.getElementById('blogDate');
-                const blogContent = document.getElementById('blogContent');
-                blogTitle.textContent = 'Błąd pobierania bloga';
-                blogDate.textContent = '';
-                blogContent.textContent = 'Wystąpił błąd podczas pobierania zawartości bloga.';
-            });
-    </script>
+    <script src="static/js/getBlog.js"></script>
+    <script src="static/js/getBlogComments.js"></script>
+    <script src="static/js/addcommentform.js"></script>
 </body>
 </html>
