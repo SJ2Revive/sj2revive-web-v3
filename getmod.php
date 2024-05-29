@@ -25,7 +25,7 @@
         <a href="/ustawienia.php">Ustawienia</a>
         <?php
         include("src/whitelist.php");
-        render();
+        processtabs();
         ?>
     </div>
     <div class="main-content">

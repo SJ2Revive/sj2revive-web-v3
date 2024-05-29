@@ -1,7 +1,7 @@
 <?php
 require("../../../config.php");
 require("../../../src/whitelist.php");
-if(!checkifwhitelisted())
+if(!CheckSessionPerms("admin"))
 {
     header("location: /");
     die();

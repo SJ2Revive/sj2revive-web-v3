@@ -1,3 +1,11 @@
+<?php
+require("src/whitelist.php");
+session_start();
+if (isset($_SESSION["token"])) {
+    Header("Location: /");
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -5,9 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SJ2Revive</title>
     <style>
-        @import url("static/css/blogpost.css");
+        @import url("static/css/main.css");
+        @import url("static/css/shoutbox.css");
     </style>
 </head>
+<body>
     <div class="sidebar">
         <h2 class="logo">
             <span style="color: #086ed3;">SJ2</span>
@@ -23,22 +33,17 @@
         <a href="/oa.php">Aktualizacje</a>
         <a href="/ustawienia.php">Ustawienia</a>
         <?php
-        include("src/whitelist.php");
-        processtabs();
+        processtabs()
         ?>
     </div>
     <div class="main-content">
-        <h3 id="blogTitle"></h3>
-        <h5 id="blogDate"></h5>
-        <p id="blogContent"></p>
-        <div class="comments">
-        
-        <br/>
-        
+        <h1></h1>
+        <h3>Zaloguj się</h3>
+        <form action="api/v1/auth/auth.php" method="POST">
+                <input name="username" placeholder="Nazwa użytkownika"/>
+                <input name="password" placeholder="Hasło"/>
+                <input type="submit"/>
+                </form>
     </div>
-
-
-    <script src="static/js/getBlog.js"></script>
-    <script src="static/js/getBlogComments.js"></script>
 </body>
 </html>

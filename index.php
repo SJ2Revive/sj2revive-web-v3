@@ -26,7 +26,7 @@
         <a href="/ustawienia.php">Ustawienia</a>
         <?php
         include("src/whitelist.php");
-        render();
+        processtabs()
         ?>
     </div>
     <div class="main-content">
@@ -46,7 +46,7 @@
                 
             </form>
             <?php
-                if(checkifwhitelisted())
+                if(CheckSessionPerms("admin"))
                 {
                     echo "<a href='api/v1/shoutbox/clear.php'><button style='width:100%'>Wyczyść czat</button></a>";
                 }

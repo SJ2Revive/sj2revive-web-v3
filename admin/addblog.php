@@ -1,6 +1,11 @@
 <?php
 require("../src/whitelist.php");
-if(!checkifwhitelisted())
+session_start();
+if (!isset($_SESSION["token"])) {
+    Header("Location: /login.php");
+    die();
+}
+if(!CheckIfHasPerms($_SESSION['token'],"admin",true))
 {
     header("location: /");
     die();
@@ -32,7 +37,7 @@ if(!checkifwhitelisted())
         <a href="/oa.php">Aktualizacje</a>
         <a href="/ustawienia.php">Ustawienia</a>
         <?php
-        render();
+        processtabs();
         ?>
     </div>
     <div class="main-content">

@@ -1,6 +1,6 @@
 <?php
 require("../src/whitelist.php");
-if(!checkifwhitelisted())
+if(!CheckSessionPerms("admin"))
 {
     header("location: /");
     die();
@@ -32,15 +32,21 @@ if(!checkifwhitelisted())
         <a href="/oa.php">Aktualizacje</a>
         <a href="/ustawienia.php">Ustawienia</a>
         <?php
-        render();
+        processtabs();
         ?>
     </div>
     <div class="main-content">
-        <br/>
-        <br/>
-    <form action="api/v1/mods/add.php" method="get">
-        TODO
-    </form>
+        <h2>Dodaj Mod</h2>
+        <form action="/api/v1/mods/add.php" method="POST" enctype="multipart/form-data">
+            <input name="name" placeholder="Nazwa moda" required><br>
+            <textarea name="shortdesc" placeholder="Krótki opis moda" required></textarea><br>
+            <textarea name="desc" placeholder="Opis moda" required></textarea><br>
+            <label for="zdj">Zdjęcie (JPG, JPEG, PNG, GIF):</label><br>
+            <input type="file" id="zdj" name="zdj" accept="image/*" required><br><br>
+            <label for="mod">Mod (ZIP, RAR, 7Z):</label><br>
+            <input type="file" id="mod" name="mod" accept=".zip,.rar,.7z" required><br><br>
+            <input type="submit" value="Dodaj Mod">
+        </form>
     </div>
 </body>
 </html>
