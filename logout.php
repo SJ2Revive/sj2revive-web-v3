@@ -3,6 +3,7 @@ session_start();
 $_SESSION = array();
 session_destroy();
 session_unset();
-Header("Location: /");
+$path = $_GET['r'];
+Header("Location: $path");
 die();
 ?>

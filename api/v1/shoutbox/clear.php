@@ -1,7 +1,7 @@
 <?php
 require("../../../config.php");
 require("../../../src/whitelist.php");
-if(!checkifwhitelisted())
+if(!CheckSessionPerms("admin")) 
 {
     header("location: /");
     die();
@@ -11,4 +11,3 @@ $db->query("DELETE FROM shoutbox");
 $db->close();
 header("location: /");
 die();
-?>

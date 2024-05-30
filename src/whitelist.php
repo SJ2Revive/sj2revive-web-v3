@@ -133,6 +133,7 @@ function CheckSessionPerms(string $perm)
 
 function processtabs()
 {
+    $url = $_SERVER['REQUEST_URI'];
     if(session_status() == PHP_SESSION_NONE)
     {
         session_start();
@@ -140,11 +141,10 @@ function processtabs()
     if (isset($_SESSION["token"])) {
         $token = $_SESSION["token"];
         if (CheckIfHasPerms($token, "admin", true)) {
-            echo "<a href='/admin/addblog.php'>Dodaj Post</a>";
-            echo "<a href='/admin/modpost.php'>Dodaj Moda</a>";
+            echo "<a href='/admin/panel.php'>Panel administracyjny</a>";
         } else {
         }
-        echo "<a href='logout.php'>Wyloguj się</a>";
+        echo "<a href='/logout.php?r=$url'>Wyloguj się</a>";
     } else {
         echo "<a href='/login.php'>Zaloguj się</a>";
     }
