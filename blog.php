@@ -36,7 +36,14 @@
         <br/>
         
     </div>
-
+    <?php
+            if(CheckSessionPerms("admin"))
+            {
+                $id = $_GET['id'];
+                echo "<a href='/admin/editblog.php?id=$id'><button>Edytuj post</button</a>";
+            }
+            
+        ?>
 
     <script src="static/js/getBlog.js"></script>
     <script src="static/js/getBlogComments.js"></script>
