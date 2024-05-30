@@ -1,6 +1,6 @@
+@import url("font.css");
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     background-color: black;
     color: white;
     display: flex;
