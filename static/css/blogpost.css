@@ -141,3 +141,10 @@ a {
     cursor: pointer;
 }
 
+.danger {
+    background-color: rgb(134, 38, 38);
+    color:white;
+    border: 1px solid white;
+    width: 100px;
+    height: 25px;
+}

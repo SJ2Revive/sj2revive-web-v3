@@ -40,7 +40,8 @@
             if(CheckSessionPerms("admin"))
             {
                 $id = $_GET['id'];
-                echo "<a href='/admin/panel.php?p=editblog&id=$id'><button>Edytuj post</button</a>";
+                echo "<a href='/admin/panel.php?p=editblog&id=$id'><button class='danger'>Edytuj post</button></a><br/><br/>";
+                echo "<a href='/admin/panel.php?p=delblog&id=$id'><button class='danger'>Usuń post</button></a>";
             }
             
         ?>

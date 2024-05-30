@@ -7,6 +7,15 @@
     <style>
         @import url("static/css/main.css");
         @import url("static/css/shoutbox.css");
+        .article {
+            text-align: left;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            width: 20%;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -50,9 +59,46 @@
                 {
                     echo "<a href='api/v1/shoutbox/clear.php'><button style='width:100%'>Wyczyść czat</button></a>";
                 }
-                ?>
+            ?>
+        </div>
+        <br/>
+        <h3>Najnowszy post na blogu</h3>
+        <div class="article-wrapper">
+            <div id="article-container"></div>
         </div>
         <script src="static/js/getShoutbox.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            fetch('api/v1/articles/get.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length === 0) return;
+                    let highestIdArticle = data.reduce((prev, current) => (parseInt(prev.id) > parseInt(current.id)) ? prev : current);
+                    let tempElement = document.createElement('div');
+                    tempElement.innerHTML = highestIdArticle.content;
+                    let textContent = tempElement.textContent || tempElement.innerText || "";
+                    let words = textContent.trim().split(/\s+/);
+                    let shortenedContent = words.slice(0, 10).join(' ');
+                    if (words.length > 10) {
+                        shortenedContent += '...';
+                    }
+                    let articleDiv = document.createElement('div');
+                    articleDiv.className = 'article';
+                    articleDiv.innerHTML = `
+                        <h2>${highestIdArticle.name}</h2>
+                        <p>${shortenedContent}</p>
+                        <p><em>${highestIdArticle.date}</em></p>
+                    `;
+                    articleDiv.addEventListener('click', () => {
+                        window.location.href = `blog.php?id=${highestIdArticle.id}`;
+                    });
+                    document.getElementById('article-container').appendChild(articleDiv);
+                })
+                .catch(error => console.error('Błąd fetchowania artykułu', error));
+        });
+
+
+        </script>
     </div>
 </body>
 </html>

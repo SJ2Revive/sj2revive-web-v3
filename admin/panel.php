@@ -87,6 +87,21 @@ if(!CheckIfHasPerms($_SESSION['token'],"admin",true))
                         echo "</form>";
                         break;     
                     }
+                    case "delblog":
+                        {
+                            require(ROOT_PATH.'/config.php');
+                            if(!isset($_GET["id"]))
+                            {
+                                header("Location: /");
+                                die();
+                            }
+                            $id = ($_GET["id"]);
+                            $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname, $dbport);
+                            $r = $db->query("DELETE FROM `articles` WHERE id = $id");
+                            Header("Location: /nowosci.php");
+                            die();
+
+                        }
                     case "addmod":
                         {
                             echo "
