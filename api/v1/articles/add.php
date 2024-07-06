@@ -7,8 +7,8 @@ if(!CheckSessionPerms("admin"))
     die();
 }
 // Get parameters from GET request
-$name = isset($_GET['name']) ? $_GET['name'] : '';
-$content = isset($_GET['content']) ? $_GET['content'] : '';
+$name = isset($_POST['name']) ? $_POST['name'] : '';
+$content = isset($_POST['content']) ? $_POST['content'] : '';
 $content = str_replace("\n","<br/>",$content);
 $date = date('Y-m-d H:i:s'); 
 if (empty($name) || empty($content) || empty($date)) {

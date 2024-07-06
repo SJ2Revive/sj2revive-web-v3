@@ -119,7 +119,7 @@ if(!CheckIfHasPerms($_SESSION['token'],"admin",true))
                         }
                     case "addblog":{
                         echo "
-                        <form action='../api/v1/articles/add.php' method='get'>
+                        <form action='../api/v1/articles/add.php' method='POST'>
                             <p>Nazwa posta</p>
                             <input name='name'/>
                             <br/>
