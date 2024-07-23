@@ -30,7 +30,7 @@
     </div>
     <div class="main-content">
         <h1></h1>
-        <h3>Blog</h3>
+        <h3>Modyfikacje</h3>
         <h5>Tutaj znajdziesz mody na temat SJ2Revive</h5>
         <div class="mods">
         </div>

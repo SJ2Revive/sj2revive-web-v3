@@ -29,12 +29,12 @@
         ?>
     </div>
     <div class="main-content">
-        <h3 id="ModTitle">test</h3>
+        <h3 id="ModTitle">Tytuł moda sie dalej wczytuje...</h3>
         <?php
         $id = $_GET['id'];
         echo "<img src='static/img/mods/$id.png' height='768' width='1024'/>"
         ?>
-        <h5 id="ModDesc">test</h5>
+        <h5 id="ModDesc">Opis modyfikacji sie dalej wczytuje...</h5>
         <a href="" id="dloadbtn">
             <button>Pobierz</button>
         </a>
@@ -49,8 +49,8 @@
                 const ModDesc = document.getElementById('ModDesc');
                 const dload = document.getElementById("dloadbtn");
                 if (data.error) {
-                    ModTitle.textContent = 'Błąd pobierania bloga';
-                    ModDesc.textContent = 'Wystąpił błąd podczas pobierania zawartości bloga.';
+                    ModTitle.textContent = 'Błąd pobierania moda';
+                    ModDesc.textContent = 'Wystąpił błąd podczas pobierania zawartości moda.';
                 } else {
                     const articleId = new URLSearchParams(window.location.search).get('id');
                     const article = data.find(item => item.id === articleId);
