@@ -5,3 +5,5 @@
 @ $dbuser = "root";
 @ $dbpassword = "";
 @ $dbname = "sj2revive";
+@ $captchasecret = "";
+@ $sitekey = "";

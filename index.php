@@ -16,7 +16,29 @@
             width: 20%;
             display: inline-block;
         }
+        .g-recaptcha {
+            display: none; /* Hide reCAPTCHA initially */
+        }
     </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+    function onSubmit(token) {
+        document.getElementById("chatbox").submit();
+    }
+
+    function showCaptcha() {
+        document.getElementById("recaptcha-container").style.display = 'block';
+        grecaptcha.render('recaptcha-container', {
+            'sitekey': '<?php include("config.php"); echo $sitekey;?>', // Replace with your reCAPTCHA site key
+            'callback': onSubmit
+        });
+    }
+
+    function validate(event) {
+        event.preventDefault();  // Prevent form submission
+        showCaptcha();  // Show and execute reCAPTCHA
+    }
+    </script>
 </head>
 <body>
     <div class="sidebar">
@@ -35,7 +57,7 @@
         <a href="/ustawienia.php">Ustawienia</a>
         <?php
         include("src/whitelist.php");
-        processtabs()
+        processtabs();
         ?>
     </div>
     <div class="main-content">
@@ -48,11 +70,12 @@
             <div class="shoutbox">
             </div>
             <br/>
-            <form action="api/v1/shoutbox/add.php" method="get">
-                <input name="author" placeholder="Nazwa użytkownika"/>
-                <input name="content" placeholder="Wiadomość"/>
-                <input type="submit"/>
-                
+            <form action="api/v1/shoutbox/add.php" id="chatbox" method="post">
+                <input name="author" placeholder="Nazwa użytkownika" required/>
+                <input name="content" placeholder="Wiadomość" required/>
+                <div id="recaptcha-container" class="g-recaptcha" data-callback="onSubmit"></div>
+                <br/>
+                <input type="button" onclick="validate(event)" value="Prześlij"></input>
             </form>
             <?php
                 if(CheckSessionPerms("admin"))
@@ -96,8 +119,6 @@
                 })
                 .catch(error => console.error('Błąd fetchowania artykułu', error));
         });
-
-
         </script>
     </div>
 </body>

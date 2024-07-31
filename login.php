@@ -16,6 +16,25 @@ if (isset($_SESSION["token"])) {
         @import url("static/css/main.css");
         @import url("static/css/shoutbox.css");
     </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+    function onSubmit(token) {
+        document.getElementById("loginbox").submit();
+    }
+
+    function showCaptcha() {
+        document.getElementById("recaptcha-container").style.display = 'block';
+        grecaptcha.render('recaptcha-container', {
+            'sitekey': '<?php include("config.php"); echo $sitekey;?>', // Replace with your reCAPTCHA site key
+            'callback': onSubmit
+        });
+    }
+
+    function validate(event) {
+        event.preventDefault();  // Prevent form submission
+        showCaptcha();  // Show and execute reCAPTCHA
+    }
+    </script>
 </head>
 <body>
     <div class="sidebar">
@@ -39,10 +58,12 @@ if (isset($_SESSION["token"])) {
     <div class="main-content">
         <h1></h1>
         <h3>Zaloguj się</h3>
-        <form action="api/v1/auth/auth.php" method="POST">
+        <form action="api/v1/auth/auth.php" id="loginbox" method="POST">
                 <input name="username" placeholder="Nazwa użytkownika"/>
-                <input name="password" placeholder="Hasło"/>
-                <input type="submit"/>
+                <input name="password" type="password" placeholder="Hasło"/>
+                <div id="recaptcha-container" class="g-recaptcha" data-callback="onSubmit"></div>
+                <br/>
+                <input type="button" onclick="validate(event)" value="Prześlij"></input>
                 </form>
     </div>
 </body>
