@@ -33,9 +33,9 @@ if (isset($_POST['g-recaptcha-response'])) {
         if ($result) {
             $row = $result->fetch_assoc();
             $rowCount = $row['count'];
-            if ($rowCount > 7) {
-                $db->query('DELETE FROM shoutbox');
-            }
+            //if ($rowCount > 7) {
+            //    $db->query('DELETE FROM shoutbox');
+            //}
         }
         if (isset($_POST['author']) && isset($_POST['content'])) {
             $author = $db->real_escape_string(trim($_POST['author']));
