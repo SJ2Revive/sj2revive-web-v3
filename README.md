@@ -5,9 +5,6 @@
 </div>
 <h1 align="center"> Strona Projektu SJ2Revive </h1>
 <p align="center">tak dokładnie to jej trzecia wersja</p>
-<br>
-
-
 <h2 align="center"> Wymagania </h2> 
 <ul>
   <li>PHP (minimum 7.x, ale zalecane jest 8.x)</li>
