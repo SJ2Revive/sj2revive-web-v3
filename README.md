@@ -24,7 +24,7 @@
 </ol>
 <h4>⚠ W przypadku problemów z uruchomieniem projektu, Stwórz "wątek" w zakładce Issues ⚠</h4>
 
-<h2 align="center"> Wkład to projektu </h2>
+<h2 align="center"> Wkład do projektu </h2>
   Jestem w pełni otwarty na wszelkie pomysły i pull requesty
 
 <h2 align="center"> Jakies Pytania? </h2>
