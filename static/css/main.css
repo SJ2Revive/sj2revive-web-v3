@@ -71,6 +71,7 @@ body {
     gap: 10px;
 }
 .mod {
+    border-radius: 5px;
     border: 2px solid white;
     background-color: #ffffff42;
     max-width: 250px;
