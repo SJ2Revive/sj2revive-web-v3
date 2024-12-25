@@ -7,3 +7,4 @@
 @ $dbname = "sj2revive";
 @ $captchasecret = "";
 @ $sitekey = "";
+@ $toggleShoutbox = true;

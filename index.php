@@ -17,7 +17,7 @@
             display: inline-block;
         }
         .g-recaptcha {
-            display: none; /* Hide reCAPTCHA initially */
+            display: none;
         }
     </style>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -29,14 +29,14 @@
     function showCaptcha() {
         document.getElementById("recaptcha-container").style.display = 'block';
         grecaptcha.render('recaptcha-container', {
-            'sitekey': '<?php include("config.php"); echo $sitekey;?>', // Replace with your reCAPTCHA site key
+            'sitekey': '<?php include("config.php"); echo $sitekey;?>',
             'callback': onSubmit
         });
     }
 
     function validate(event) {
-        event.preventDefault();  // Prevent form submission
-        showCaptcha();  // Show and execute reCAPTCHA
+        event.preventDefault(); 
+        showCaptcha(); 
     }
     </script>
 </head>
@@ -65,25 +65,30 @@
         <h3>Witamy na odnowionej stronie projektu SJ2REVIVE</h3>
         <h5>Wybierz kategorie która cię interesuje</h5>
         <img src="https://media.tenor.com/ZZIk4A2HY4sAAAAi/cockroach-spinning.gif" width="256" height="256"/>
-        <div class="shoutboxcontainer">
-            <p align="center">Shoutbox</p>
-            <div class="shoutbox">
-            </div>
-            <br/>
-            <form action="api/v1/shoutbox/add.php" id="chatbox" method="post">
-                <input name="author" placeholder="Nazwa użytkownika" required/>
-                <input name="content" placeholder="Wiadomość" required/>
-                <div id="recaptcha-container" class="g-recaptcha" data-callback="onSubmit"></div>
+        <?php
+            if($toggleShoutbox == true) {
+                echo "
+                <div class='shoutboxcontainer'>
+                <p align='center'>Shoutbox</p>
+                <div class='shoutbox'>
+                </div>
                 <br/>
-                <input type="button" onclick="validate(event)" value="Prześlij"></input>
-            </form>
-            <?php
-                if(CheckSessionPerms("admin"))
-                {
-                    echo "<a href='api/v1/shoutbox/clear.php'><button style='width:100%'>Wyczyść czat</button></a>";
-                }
-            ?>
-        </div>
+                <form action='api/v1/shoutbox/add.php' id='chatbox' method='post'>
+                    <input name='author' placeholder='Nazwa użytkownika' required/>
+                    <input name='content' placeholder='Wiadomość' required/>
+                    <div id='recaptcha-container' class='g-recaptcha' data-callback='onSubmit'></div>
+                    <br/>
+                    <input type='button' onclick='validate(event)' value='Prześlij'></input>
+                </form>
+                <?php
+                    if(CheckSessionPerms('admin'))
+                    {
+                        echo '<a href='api/v1/shoutbox/clear.php'><button style='width:100%'>Wyczyść czat</button></a>';
+                    }
+                ?>
+                </div>";
+            }
+        ?>
         <br/>
         <h3>Najnowszy post na blogu</h3>
         <div class="article-wrapper">

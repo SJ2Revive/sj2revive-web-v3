@@ -1,5 +1,7 @@
 <?php
 require("../../../config.php");
+
+if($toggleShoutbox == false) {http_response_code(403); die();}
 $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname, $dbport);
 $result = $db->query("SELECT * FROM shoutbox LIMIT 8");
 header('Content-Type: text/json');

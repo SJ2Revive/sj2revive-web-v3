@@ -1,6 +1,6 @@
 <?php
 require("../../../config.php");
-
+if($toggleShoutbox == false) {http_response_code(403); die();}
 if (isset($_POST['g-recaptcha-response'])) {
     $recaptcha = $_POST['g-recaptcha-response'];
     $secret_key = $captchasecret;
