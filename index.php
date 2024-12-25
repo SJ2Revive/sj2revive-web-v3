@@ -64,7 +64,12 @@
         <h1></h1>
         <h3>Witamy na odnowionej stronie projektu SJ2REVIVE</h3>
         <h5>Wybierz kategorie która cię interesuje</h5>
-        <img src="https://media.tenor.com/ZZIk4A2HY4sAAAAi/cockroach-spinning.gif" width="256" height="256"/>
+        <?php
+            include("config.php");
+            if($toggleIndexLogo == true) {
+                echo "<img src='$indexLogoUrl' style='width: 100%; height: 100%;'>";
+            }
+        ?>
         <?php
             if($toggleShoutbox == true) {
                 echo "
