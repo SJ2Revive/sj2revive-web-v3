@@ -38,7 +38,7 @@ if (isset($_SESSION["token"])) {
 </head>
 <body>
     <div class="sidebar">
-        <?php include("elements/nav.php"); drawNavbar();?>
+        <?php include("elements/nav.php"); DrawNavBarHeader();?>
         <p style="font-size: 12px;text-align: center;color: yellowgreen;">Jedyna strona z modami do <span style="color: #086ed3;">Symulatora Jazdy 2</span></p>
         <a href="/">Strona Główna</a>
         <a href="/faq.php">FAQ</a>

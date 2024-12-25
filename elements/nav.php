@@ -1,5 +1,5 @@
 <?php
-function drawNavbar() {
+function DrawNavBarHeader() {
     echo '
     <h2 class="logo">
             <span style="color:rgb(77, 139, 201);">SJ2</span>
