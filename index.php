@@ -13,7 +13,7 @@
             padding: 10px;
             margin: 10px;
             cursor: pointer;
-            width: 20%;
+            width: 50%;
             display: inline-block;
         }
         .g-recaptcha {
