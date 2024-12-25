@@ -74,6 +74,9 @@ body {
     text-decoration: none;
     color: white;
 }
+.mod img {
+    width: 100%;
+}
 a {
     color:red;
     text-decoration: none;
