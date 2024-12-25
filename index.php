@@ -82,6 +82,7 @@
                 </form>";
                     if(CheckSessionPerms('admin'))
                     {
+                        echo "<a href='api/v1/shoutbox/clear.php'><button style='width:100%'>Wyczyść czat</button></a>";
                     }
                 echo "</div>";
             }
