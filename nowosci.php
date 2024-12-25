@@ -37,7 +37,7 @@
     </div>
 
     <script>
-        // Fetch data from PHP endpoint and fill news div
+        
         fetch('/api/v1/articles/get.php')
             .then(response => response.json())
             .then(data => {

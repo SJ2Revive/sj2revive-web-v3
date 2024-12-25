@@ -1,19 +1,26 @@
 @import url("font.css");
 body {
     margin: 0;
-    background-color: black;
+    background-color: #0f0f0f;
     color: white;
     display: flex;
 }
 .sidebar {
     width: 200px;
-    background-color: #2c2c2c;
+    background-color: #302b2b;
     padding-top: 20px;
-    height: 100vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 10px;
+    position: fixed;
+    top:50%;
+    transform: translate(0%,-50%);
+    left: 10px;
+}
+.sidebar * {
+    top:100px;
 }
 .sidebar a {
     color: white;
@@ -29,10 +36,11 @@ body {
     border-bottom: 2px solid white;
 }
 .main-content {
+    margin-left: 200px;
     flex-grow: 1;
     justify-content: center;
     align-items: center;
-    border: 2px solid white;
+    /*border: 2px solid white;*/
     text-align: center;
 }
 .sidebar img {

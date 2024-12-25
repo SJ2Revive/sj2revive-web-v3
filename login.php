@@ -31,18 +31,14 @@ if (isset($_SESSION["token"])) {
     }
 
     function validate(event) {
-        event.preventDefault();  // Prevent form submission
-        showCaptcha();  // Show and execute reCAPTCHA
+        event.preventDefault(); 
+        showCaptcha();  
     }
     </script>
 </head>
 <body>
     <div class="sidebar">
-        <h2 class="logo">
-            <span style="color: #086ed3;">SJ2</span>
-            <span style="color: green;">Revive</span>
-            <span style="color: yellow;">.top</span>
-        </h2>
+        <?php include("elements/nav.php"); drawNavbar();?>
         <p style="font-size: 12px;text-align: center;color: yellowgreen;">Jedyna strona z modami do <span style="color: #086ed3;">Symulatora Jazdy 2</span></p>
         <a href="/">Strona Główna</a>
         <a href="/faq.php">FAQ</a>
