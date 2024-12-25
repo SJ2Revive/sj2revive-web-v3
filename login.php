@@ -47,7 +47,6 @@ if (isset($_SESSION["token"])) {
         <a href="/modyfikacje.php">Modyfikacje</a>
         <a href="/launcher.php">Launcher</a>
         <a href="/oa.php">Aktualizacje</a>
-        <a href="/ustawienia.php">Ustawienia</a>
         <?php
         processtabs()
         ?>

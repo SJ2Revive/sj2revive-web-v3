@@ -36,7 +36,6 @@ if(!CheckIfHasPerms($_SESSION['token'],"admin",true))
         <a href="/modyfikacje.php">Modyfikacje</a>
         <a href="/launcher.php">Launcher</a>
         <a href="/oa.php">Aktualizacje</a>
-        <a href="/ustawienia.php">Ustawienia</a>
         <?php
         processtabs();
         ?>
