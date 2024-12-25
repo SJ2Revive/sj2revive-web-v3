@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SJ2Revive</title>
     <style>
+        @import url("static/css/main.css");
         @import url("static/css/blogpost.css");
     </style>
 </head>

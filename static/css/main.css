@@ -36,7 +36,7 @@ body {
     border-bottom: 2px solid white;
 }
 .main-content {
-    margin-left: 200px;
+    margin-left: 225px;
     flex-grow: 1;
     justify-content: center;
     align-items: center;
