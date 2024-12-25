@@ -61,7 +61,7 @@ if(!CheckIfHasPerms($_SESSION['token'],"admin",true))
                         echo "<form action='../api/v1/articles/edit.php' method='POST'>";
                         $id = $_GET['id'];
                         echo "<input name='id' type='hidden' value='$id'>$id</input>";
-                        require("..\\config.php");
+                        require(ROOT_PATH.'\\config.php');
                         $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname, $dbport);
                         $stmt = $db->prepare('SELECT * FROM articles WHERE id = ?');
                         $stmt->bind_param('i', $id);
