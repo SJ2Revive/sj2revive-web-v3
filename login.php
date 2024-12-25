@@ -25,12 +25,13 @@ if (isset($_SESSION["token"])) {
     function showCaptcha() {
         document.getElementById("recaptcha-container").style.display = 'block';
         grecaptcha.render('recaptcha-container', {
-            'sitekey': '<?php include("config.php"); echo $sitekey;?>', // Replace with your reCAPTCHA site key
+            'sitekey': '<?php include("config.php"); echo $sitekey;?>',
             'callback': onSubmit
         });
     }
 
     function validate(event) {
+        <?php if($toggleCaptcha == false) {echo "document.getElementById('loginbox').submit();";} ?>
         event.preventDefault(); 
         showCaptcha();  
     }

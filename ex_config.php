@@ -10,3 +10,4 @@
 @ $toggleShoutbox = true;
 @ $toggleIndexLogo = true;
 @ $indexLogoUrl = "https://media.tenor.com/ZZIk4A2HY4sAAAAi/cockroach-spinning.gif";
+@ $toggleCaptcha = false;

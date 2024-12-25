@@ -8,27 +8,18 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 require("../../../src/whitelist.php");
 require("../../../config.php");
-if (isset($_POST['g-recaptcha-response'])) {
-    $recaptcha = $_POST['g-recaptcha-response'];
-    $secret_key = $captchasecret;
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
-    $data = [
-        'secret' => $secret_key,
-        'response' => $recaptcha
-    ];
-    
-    $options = [
-        'http' => [
-            'header'  => "Content-type: application/x-www-form-urlencoded",
-            'method'  => 'POST',
-            'content' => http_build_query($data)
-        ]
-    ];
-    $context  = stream_context_create($options);
-    $response = file_get_contents($url, false, $context);
-    $responseKeys = json_decode($response, true);
+if (isset($_POST['g-recaptcha-response']) || $toggleCaptcha == false) {
+    if($toggleCaptcha == true)
+    {
+        $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+        $recaptcha_secret = $captchasecret;
+        $recaptcha_response = $_POST['g-recaptcha-response'];
+        $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
+        $recaptcha = json_decode($recaptcha);
+        $responseKeys = json_decode($recaptcha);
+    }
 
-    if ($responseKeys["success"]) {
+    if ($responseKeys["success"] || $toggleCaptcha == false) {
         if(ValidateLogin($username, $password,false))
     {
         session_start();
