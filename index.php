@@ -79,14 +79,11 @@
                     <div id='recaptcha-container' class='g-recaptcha' data-callback='onSubmit'></div>
                     <br/>
                     <input type='button' onclick='validate(event)' value='Prześlij'></input>
-                </form>
-                <?php
+                </form>";
                     if(CheckSessionPerms('admin'))
                     {
-                        echo '<a href='api/v1/shoutbox/clear.php'><button style='width:100%'>Wyczyść czat</button></a>';
                     }
-                ?>
-                </div>";
+                echo "</div>";
             }
         ?>
         <br/>
