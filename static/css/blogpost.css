@@ -50,6 +50,7 @@ input {
     min-height: 50px;
     background-color: rgba(173, 173, 173, 0.295);
     border: 2px solid white;
+    border-radius: 5px;
 }
 a {
     color:red;
@@ -98,6 +99,8 @@ a {
     border: 2px solid white;
     color: white;
     cursor: pointer;
+    
+    border-radius: 5px;
 }
 
 .danger {

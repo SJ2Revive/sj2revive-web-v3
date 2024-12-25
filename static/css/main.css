@@ -29,11 +29,11 @@ body {
     text-align: center;
     min-width: 80%;
     text-decoration: none;
-    transition-duration: 2s;
+    transition-duration: 1s;
 }
 .sidebar a:hover {
     background-color: #3d3d3d;
-    border-bottom: 2px solid white;
+    text-shadow: 0px 0px 8px whitesmoke;
 }
 .main-content {
     margin-left: 225px;
@@ -96,4 +96,6 @@ button {
     background-color: rgba(173, 173, 173, 0.295);
     color: white;
     border: 2px solid white;
+    
+    border-radius: 5px;
 }
