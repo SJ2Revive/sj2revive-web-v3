@@ -88,7 +88,7 @@ a {
     color:red;
     text-decoration: none;
 }
-button {
+button, input[type="submit"] {
     min-width: 100px;
     min-height: 3em;
     background-color: rgba(173, 173, 173, 0.295);
