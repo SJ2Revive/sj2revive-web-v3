@@ -15,6 +15,7 @@
             cursor: pointer;
             width: 50%;
             display: inline-block;
+            border-radius: 10px;
         }
         .g-recaptcha {
             display: none;
