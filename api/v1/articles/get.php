@@ -2,7 +2,7 @@
 require("../../../config.php");
 $db = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname, $dbport);
 
-$result = $db->query("SELECT * FROM articles");
+$result = $db->query("SELECT * FROM articles ORDER BY id DESC");
 header('Content-Type: text/json');
 if ($result->num_rows > 0) {
     $articles = array();
