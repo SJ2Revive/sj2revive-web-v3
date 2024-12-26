@@ -6,6 +6,7 @@
     <title>SJ2Revive</title>
     <link rel="stylesheet" href="static/css/main.css">
     <link rel="stylesheet" href="static/css/components/article.css">
+    <script src="/static/js/mobile.js"></script>
 </head>
 <body>
     <div class="sidebar">

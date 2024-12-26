@@ -19,6 +19,8 @@ if(!CheckIfHasPerms($_SESSION['token'],"admin",true))
     <title>SJ2Revive</title>
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/blogpost.css">
+    
+    <script src="/static/js/mobile.js"></script>
 </head>
 <body>
     <div class="sidebar">

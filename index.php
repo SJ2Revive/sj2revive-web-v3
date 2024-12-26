@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="static/css/components/captcha.css">
     <link rel="stylesheet" href="static/css/components/article.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="/static/js/mobile.js"></script>
     <script>
     function onSubmit(token) {
         document.getElementById("chatbox").submit();

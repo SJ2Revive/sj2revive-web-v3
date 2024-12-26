@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SJ2Revive</title>
     <link rel="stylesheet" href="static/css/main.css">
+    <script src="/static/js/mobile.js"></script>
 </head>
 <body>
     <div class="sidebar">

@@ -15,6 +15,7 @@ if (isset($_SESSION["token"])) {
     <link rel="stylesheet" href="static/css/main.css">
     <link rel="stylesheet" href="static/css/shoutbox.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="/static/js/mobile.js"></script>
     <script>
     function onSubmit(token) {
         document.getElementById("loginbox").submit();
