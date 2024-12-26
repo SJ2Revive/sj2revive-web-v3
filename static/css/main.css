@@ -19,9 +19,7 @@ body {
     transform: translate(0%,-50%);
     left: 10px;
 }
-.sidebar * {
-    top:100px;
-}
+
 .sidebar a {
     color: white;
     padding: 10px 20px;
