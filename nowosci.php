@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SJ2Revive</title>
     <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/components/article.css">
 </head>
 <body>
     <div class="sidebar">
@@ -40,7 +41,22 @@
                 } else {
                     let newsHTML = '';
                     data.forEach(article => {
-                        newsHTML += `<a href='/blog.php?id=${article.id}'>${article.name} | ${article.date}</a><br>`;
+                        let tempElement = document.createElement('div');
+                        tempElement.innerHTML = article.content;
+                        let textContent = tempElement.textContent || tempElement.innerText || "";
+                        let words = textContent.trim().split(/\s+/);
+                        let shortenedContent = words.slice(0, 13).join(' ');
+                        if (words.length > 10) {
+                            shortenedContent += '...';
+                        }
+                        newsHTML += `<a href='/blog.php?id=${article.id}'>
+                        <div class='articlebigger'>
+                        <h2>${article.name}</h2>
+                        <p>${shortenedContent}</p>
+                        <p><em>${article.date}</em></p>
+                        </div>
+                        </a>
+                        <br>`;
                     });
                     newsDiv.innerHTML = newsHTML;
                 }

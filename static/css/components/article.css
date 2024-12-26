@@ -8,3 +8,14 @@
     display: inline-block;
     border-radius: 10px;
 }
+
+.articlebigger {
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    width: 65%;
+    display: inline-block;
+    border-radius: 10px;
+}
