@@ -35,8 +35,7 @@ if (isset($_POST['g-recaptcha-response']) || $toggleCaptcha == false) {
         }
     }
 
-    if ($toggleCaptcha == false) {
-        if(ValidateLogin($username, $password,false))
+    if(ValidateLogin($username, $password,false))
     {
         session_start();
         $_SESSION['token'] = GetTokenByUsername($username);
@@ -45,6 +44,5 @@ if (isset($_POST['g-recaptcha-response']) || $toggleCaptcha == false) {
     } else {
         Header("Location: /login.php");
         die();
-    }
     }
 }
