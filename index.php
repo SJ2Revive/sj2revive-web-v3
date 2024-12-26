@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SJ2Revive</title>
-    <style>
-        @import url("static/css/main.css");
-        @import url("static/css/shoutbox.css");
-        @import url("static/css/components/captcha.css");
-        @import url("static/css/components/article.css");
-    </style>
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/shoutbox.css">
+    <link rel="stylesheet" href="static/css/components/captcha.css">
+    <link rel="stylesheet" href="static/css/components/article.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
     function onSubmit(token) {

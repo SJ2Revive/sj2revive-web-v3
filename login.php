@@ -12,10 +12,8 @@ if (isset($_SESSION["token"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SJ2Revive</title>
-    <style>
-        @import url("static/css/main.css");
-        @import url("static/css/shoutbox.css");
-    </style>
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/shoutbox.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
     function onSubmit(token) {
