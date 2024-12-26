@@ -90,7 +90,7 @@ a {
 }
 button {
     min-width: 100px;
-    min-height: 50px;
+    min-height: 3em;
     background-color: rgba(173, 173, 173, 0.295);
     color: white;
     border: 2px solid white;
