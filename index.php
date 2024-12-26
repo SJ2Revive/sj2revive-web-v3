@@ -7,19 +7,8 @@
     <style>
         @import url("static/css/main.css");
         @import url("static/css/shoutbox.css");
-        .article {
-            text-align: left;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-            cursor: pointer;
-            width: 50%;
-            display: inline-block;
-            border-radius: 10px;
-        }
-        .g-recaptcha {
-            display: none;
-        }
+        @import url("static/css/components/captcha.css");
+        @import url("static/css/components/article.css");
     </style>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
