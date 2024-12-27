@@ -15,7 +15,7 @@
 <ol>
   <li>Stwórz Konto w bazie danych</li>
   <li>Stwórz Tabele o dowolnej nazwie</li>
-  <li>Zaimportuj dump bazy danych(kiedyś może go faktycznie dodam do repo)</li>
+  <li>Zaimportuj dump bazy danych</li>
   <details>
     <summary>dump sql</summary>
     <code>CREATE TABLE `articles` (
