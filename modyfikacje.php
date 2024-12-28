@@ -40,7 +40,7 @@
                 } else {
                     let modsHTML = '';
                     data.forEach(mod => {
-                        modsHTML += `<div class='mod'><img src="static/img/mods/${mod.id}.png" height="256" width="256"/><br/><a href='/getmod.php?id=${mod.id}'>${mod.name} - ${mod.shortdesc}</a><br></div>`;
+                        modsHTML += `<a href='/getmod.php?id=${mod.id}'><div class='mod'><img src="static/img/mods/${mod.id}.png" height="256" width="256"/><br/><a href=''>${mod.name} - ${mod.shortdesc}</a><br></div></a>`;
                     });
                     modsDiv.innerHTML = modsHTML;
                 }
